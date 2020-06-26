@@ -11,6 +11,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "DetailsViewController.h"
 
+
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *movies;
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView; // outlet for tableView
 
 @property (nonatomic, strong) UIRefreshControl *refreshContol;
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
@@ -32,10 +34,10 @@
     self.navigationItem.title = @"Movies";
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self.activityIndicator startAnimating];
     
-    [self fetchMovies];
     
+    [self.activityIndicator startAnimating]; // activity indicator
+    [self fetchMovies]; // caling the request
     self.refreshContol = [[UIRefreshControl alloc] init];
     [self.refreshContol addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshContol atIndex:0];

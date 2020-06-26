@@ -21,7 +21,6 @@
 		2FCC132224A3FAE4005F6194 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC132124A3FAE4005F6194 /* DetailsViewController.m */; };
 		2FCC137124A539CD005F6194 /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC137024A539CD005F6194 /* MoviesGridViewController.m */; };
 		2FCC137424A53C2B005F6194 /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC137324A53C2B005F6194 /* MovieCollectionViewCell.m */; };
-		2FCC137A24A5802E005F6194 /* SearchCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC137924A5802E005F6194 /* SearchCollectionReusableView.m */; };
 		2FCC137D24A5A48E005F6194 /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC137C24A5A48E005F6194 /* TrailerViewController.m */; };
 		829BED0BDA1096CE42EF4087 /* Pods_Flix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CABE2DD6FB0F3D4C3C221F7 /* Pods_Flix.framework */; };
 		CF9E94862DB45F6549723880 /* Pods_FlixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB55C93555E9DD44788AEFD /* Pods_FlixTests.framework */; };
@@ -71,8 +70,6 @@
 		2FCC137024A539CD005F6194 /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
 		2FCC137224A53C2B005F6194 /* MovieCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionViewCell.h; sourceTree = "<group>"; };
 		2FCC137324A53C2B005F6194 /* MovieCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionViewCell.m; sourceTree = "<group>"; };
-		2FCC137824A5802E005F6194 /* SearchCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCollectionReusableView.h; sourceTree = "<group>"; };
-		2FCC137924A5802E005F6194 /* SearchCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionReusableView.m; sourceTree = "<group>"; };
 		2FCC137B24A5A48E005F6194 /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
 		2FCC137C24A5A48E005F6194 /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
 		34C98AA47DA6975AB08E5048 /* Pods-Flix-FlixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix-FlixUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flix-FlixUITests/Pods-Flix-FlixUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,8 +192,6 @@
 				2FCC131E24A3EA03005F6194 /* MovieCell.m */,
 				2FCC137224A53C2B005F6194 /* MovieCollectionViewCell.h */,
 				2FCC137324A53C2B005F6194 /* MovieCollectionViewCell.m */,
-				2FCC137824A5802E005F6194 /* SearchCollectionReusableView.h */,
-				2FCC137924A5802E005F6194 /* SearchCollectionReusableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -476,7 +471,6 @@
 				2FCC137424A53C2B005F6194 /* MovieCollectionViewCell.m in Sources */,
 				2FCC132224A3FAE4005F6194 /* DetailsViewController.m in Sources */,
 				2FCC12F524A3B767005F6194 /* main.m in Sources */,
-				2FCC137A24A5802E005F6194 /* SearchCollectionReusableView.m in Sources */,
 				2FCC12E724A3B766005F6194 /* SceneDelegate.m in Sources */,
 				2FCC137124A539CD005F6194 /* MoviesGridViewController.m in Sources */,
 			);
