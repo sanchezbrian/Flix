@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="185" id="uZQ-xy-fgE" customClass="MovieCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="185" id="uZQ-xy-fgE" customClass="MovieCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uZQ-xy-fgE" id="Zz3-81-Re4">
@@ -49,6 +49,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="infoLabel" destination="hOZ-ce-Jah" id="jeM-pu-xAG"/>
                                             <outlet property="posterView" destination="jNO-n6-SiX" id="Kf1-3q-BIQ"/>
@@ -320,7 +321,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fyr-x8-Lfw"/>
-        <segue reference="oLO-VW-0mX"/>
+        <segue reference="5ux-7K-jQv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowtriangle.right.circle" catalog="system" width="128" height="121"/>
