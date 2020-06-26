@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "TrailerViewController.h"
 
 
 @interface DetailsViewController ()
@@ -48,16 +49,21 @@
     [self.posterView.layer setBorderColor: [[UIColor whiteColor] CGColor]];
     [self.posterView.layer setBorderWidth: 2.0];
 }
+- (IBAction)didTapImage:(UITapGestureRecognizer *)sender {
+}
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    TrailerViewController *trailerViewController = [segue destinationViewController];
+    trailerViewController.urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%@/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US", self.movie[@"id"]];
+    
+    
 }
-*/
+
 
 
 
