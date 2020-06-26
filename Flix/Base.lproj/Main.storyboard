@@ -122,13 +122,20 @@
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iQ-Ro-yiI">
-                                        <rect key="frame" x="154" y="85" width="107" height="69"/>
+                                    <button autoresizesSubviews="NO" opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iQ-Ro-yiI">
+                                        <rect key="frame" x="151" y="85" width="105" height="69"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        <state key="normal" image="play.fill" catalog="system"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" image="arrowtriangle.right.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
+                                        </state>
                                         <connections>
-                                            <segue destination="SmF-z7-sho" kind="presentation" id="fyr-x8-Lfw"/>
+                                            <segue destination="SmF-z7-sho" kind="presentation" id="fyr-x8-Lfw">
+                                                <segue key="commit" inheritsFrom="parent" id="gyV-zB-7lp"/>
+                                                <segue key="preview" inheritsFrom="commit" id="5WD-no-tUf"/>
+                                            </segue>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -206,11 +213,11 @@
             </objects>
             <point key="canvasLocation" x="1264" y="-605"/>
         </scene>
-        <!--Trending-->
+        <!--Superhero-->
         <scene sceneID="jwj-k4-iX2">
             <objects>
                 <navigationController id="MWS-xs-7w7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trending" image="superhero_tabbar_item" selectedImage="superhero_tabbar_item" id="N3n-fW-2oN"/>
+                    <tabBarItem key="tabBarItem" title="Superhero" image="superhero_tabbar_item" selectedImage="superhero_tabbar_item" id="N3n-fW-2oN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qcc-0o-XKh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -231,7 +238,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jy2-ps-gtp">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jy2-ps-gtp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -279,10 +286,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKP-eN-yGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <searchBar contentMode="redraw" id="S2Y-ts-gYq">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <searchBar contentMode="redraw" showsCancelButton="YES" id="S2Y-ts-gYq">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <textInputTraits key="textInputTraits"/>
+                    <scopeButtonTitles>
+                        <string>Title</string>
+                        <string>Title</string>
+                    </scopeButtonTitles>
                 </searchBar>
             </objects>
             <point key="canvasLocation" x="1908.6956521739132" y="817.63392857142856"/>
@@ -309,11 +320,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fyr-x8-Lfw"/>
-        <segue reference="5ux-7K-jQv"/>
+        <segue reference="oLO-VW-0mX"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrowtriangle.right.circle" catalog="system" width="128" height="121"/>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
-        <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
 </document>
