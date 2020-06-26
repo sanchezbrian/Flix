@@ -45,7 +45,7 @@
 
 - (void)fetchMovies {
     // url endpoint
-    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
+    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     
@@ -101,34 +101,39 @@
     cell.titleLabel.text = movie[@"title"];
     cell.infoLabel.text = movie[@"overview"];
     
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterURLString = movie[@"poster_path"];
-    NSString *fullPosterURL = [baseURLString stringByAppendingString:posterURLString];
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:posterURL];
-    __weak MovieCell *weakSelf = cell;
-    [cell.posterView setImageWithURLRequest:request placeholderImage:nil
-                                    success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {
-                                        
-                                        // imageResponse will be nil if the image is cached
-                                        if (imageResponse) {
-                                            NSLog(@"Image was NOT cached, fade in image");
-                                            weakSelf.posterView.alpha = 0.0;
-                                            weakSelf.posterView.image = image;
-                                            
-                                            //Animate UIImageView back to alpha 1 over 0.3sec
-                                            [UIView animateWithDuration:.3 animations:^{
-                                                weakSelf.posterView.alpha = 1.0;
-                                            }];
-                                        }
-                                        else {
-                                            NSLog(@"Image was cached so just update the image");
-                                            weakSelf.posterView.image = image;
-                                        }
-                                    }
-                                    failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
-                                        // do something for the failure condition
-                                    }];
+    if ([movie[@"poster_path"] isKindOfClass:[NSString class]]) {
+         NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+         NSString *posterURLString = movie[@"poster_path"];
+         NSString *fullPosterURL = [baseURLString stringByAppendingString:posterURLString];
+         NSURL *posterURL = [NSURL URLWithString:fullPosterURL];
+         NSURLRequest *request = [NSURLRequest requestWithURL:posterURL];
+         __weak MovieCell *weakSelf = cell;
+         [cell.posterView setImageWithURLRequest:request placeholderImage:nil
+                                         success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {
+                                             
+                                             // imageResponse will be nil if the image is cached
+                                             if (imageResponse) {
+                                                 NSLog(@"Image was NOT cached, fade in image");
+                                                 weakSelf.posterView.alpha = 0.0;
+                                                 weakSelf.posterView.image = image;
+                                                 
+                                                 //Animate UIImageView back to alpha 1 over 0.3sec
+                                                 [UIView animateWithDuration:.3 animations:^{
+                                                     weakSelf.posterView.alpha = 1.0;
+                                                 }];
+                                             }
+                                             else {
+                                                 NSLog(@"Image was cached so just update the image");
+                                                 weakSelf.posterView.image = image;
+                                             }
+                                         }
+                                         failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
+                                             // do something for the failure condition
+                                         }];
+     }
+     else {
+         cell.posterView.image = nil;
+    }
     // cell.textLabel.text = movie[@"title"];
     return cell;
 }
